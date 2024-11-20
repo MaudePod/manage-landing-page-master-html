@@ -1,0 +1,9 @@
+    @import url("./styles/base.css") layer(base);
+    @import url("./styles/navbar.css") layer(navbar);
+    @import url("./styles/sectiontwo.css") layer(section);
+    @import url("./styles/sectionthree.css") layer(section);
+    @import url("./styles/sectionfour.css") layer(section);
+    @import url("./styles/sectionfive.css") layer(section);
+    @import url("./styles/footer.css") layer(footer);
+
+   

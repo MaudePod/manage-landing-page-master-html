@@ -1,0 +1,115 @@
+article[class="feature"] {
+    display: grid;
+    grid-template-areas: "... feature-title"
+        "... feature-description";
+    grid-template-columns: 10fr 90fr;
+}
+
+
+article[class="feature"] section[class="right"] h6 {
+    grid-area: feature-title;
+    color: var(--very-dark-blue);
+}
+
+article[class="feature"] section[class="right"] h6::before {
+    display: grid;
+    place-items: center;
+    background-color: var(--bright-red);
+    color: var(--very-light-gray);
+    border-color: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    counter-increment: feature-count+1;
+    content: "0" counter(feature-count);
+    position: absolute;
+    left: 49.5%;
+    padding: 5px;
+    margin-top: -10px;
+    height: 25px;
+    width: 40px;
+}
+
+article[class="feature"] section[class="right"] p {
+    grid-area: feature-description;
+}
+
+section[class="bottom-container"] {
+    max-width: 400px;
+    position: relative;
+    top: 50px;
+    z-index: -1;
+    right: 600px;
+}
+
+article[class="feature"] section[class="right"] {
+    display: contents;
+
+}
+
+@container(inline-size <=425px) {
+    section[class="bottom-container"] {
+        max-width: 400px;
+        position: relative;
+        top: -784px;
+        z-index: 0;
+        right: -102px;
+        transform: scale(35%, 35%);
+    }
+}
+
+@container(inline-size <= 600px) {
+
+    section[class="three-left"] article p,
+    article h1 {
+        width: 80%;
+    }
+}
+
+@container(inline-size <=800px) {
+    article[class="feature"] section[class="right"] p {
+        width: var(--paragraph-width);
+    }
+
+    section[class="three-left"] {
+        height: 30cqh;
+    }
+
+    section[class="three-left"] article p {
+        width: var(--paragraph-width);
+    }
+
+    section[class="three-left"] article p,
+    article h1 {
+        text-align: center;
+    }
+
+    section[class="three-right"] {
+        place-self: start;
+    }
+
+    article[class="feature"] {
+        grid-template-areas: "... feature-title"
+            "feature-description feature-description";
+        grid-template-columns: 50px auto;
+        grid-template-rows: 50px auto;
+    }
+
+    section[class="two"] {
+        height: auto;
+    }
+
+    article[class="feature"] section[class="right"] h6 {
+        background: var(--very-pale-red);
+        height: 30px;
+        display: grid;
+        align-items: center;
+        padding-left: 4%;
+        width: 120%;
+        transform: translateX(-2%);
+    }
+
+    article[class="feature"] section[class="right"] {
+        display: contents;
+
+    }
+}

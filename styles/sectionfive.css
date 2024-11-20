@@ -1,0 +1,27 @@
+section[class="simplify"] {
+    justify-self: start;
+}
+
+section[class="simplify"] h3 {
+    width: 80%;
+}
+
+button[id="get-started-simplify-button"] {
+    color: var(--bright-red);
+    background: white;
+    font-weight: 900;
+}
+@container(inline-size <= 800px) {
+    section[class="simplify"] {
+        text-align: center;
+    }
+
+    section[class="simplify"] h3 {
+        width: unset;
+    }
+    section[class="five"] {
+        background-image: url(./images/bg-simplify-section-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+}

@@ -1,0 +1,93 @@
+nav[id="manage-nav"] {
+    font-size: 1cqi;
+    color:var(--very-dark-blue);
+    font-weight: 500;
+    display: grid;
+    grid-template-areas: "logo ... desktop-menu ... get-started";
+}
+
+img[id="logo"] {
+    grid-area: logo;
+}
+
+menu[type="desktop-menu"] {
+    grid-area: desktop-menu;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    list-style-type: none;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
+
+nav[id="manage-nav"] button {
+    grid-area: get-started;
+    background-color: var(--bright-red);
+    border-color: transparent;
+    border-radius: 30px;
+    width: 150px;
+    cursor: pointer;
+}
+
+input[id="open-mobile-menu"],
+label[for="open-mobile-menu"] {
+    display: none;
+    cursor: pointer;
+}
+
+input[id="menu-close"],
+label[for="menu-close"] {
+    display: none;
+    grid-area: hamburger;
+}
+
+@container(inline-size <=800px) {
+    nav[id="manage-nav"] {
+        grid-template-areas: "logo ... hamburger";
+        justify-content: space-between;
+    }
+
+    nav[id="manage-nav"] button,
+    menu[type="desktop-menu"] {
+        display: none;
+    }
+
+    label[for="open-mobile-menu"] {
+        display: grid;
+        place-items: center;
+        grid-area: hamburger;
+        margin-top: -5px;
+    }
+
+    nav[id="manage-nav"]:has(input[id="open-mobile-menu"]:checked) label[for="open-mobile-menu"] {
+        display: none;
+    }
+
+    nav[id="manage-nav"]:has(input[id="open-mobile-menu"]:checked) label[for="menu-close"] {
+        display: grid;
+    }
+
+    nav[id="manage-nav"]:has(input[id="open-mobile-menu"]:checked) {
+        position: relative;
+    }
+
+    nav[id="manage-nav"]:has(input[id="open-mobile-menu"]:checked) menu[type="desktop-menu"] {
+        grid-area: unset;
+        display: grid;
+        grid-template-columns: 1fr;
+        background: white;
+        color: black;
+        place-items: center;
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        gap: 3cqh;
+        padding: 3% 0 3% 0;
+        border-radius: 5px;
+        font-size: large;
+        user-select: none;
+    }
+
+    nav[id="manage-nav"]:has(input[id="menu-close"]:checked) label[for="open-mobile-menu"] {
+        display: grid;
+    }
+}

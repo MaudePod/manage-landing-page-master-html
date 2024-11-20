@@ -1,0 +1,172 @@
+section[class="four"] h2 {
+    margin-bottom: 100px;
+    display: grid;
+    place-content: center;
+    width: 100cqw;
+}
+
+section[class="slider"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    transform: translateX(-21cqw);
+    height: 30cqh;
+}
+
+section[class="slider"] article {
+    display: grid;
+    place-items: center;
+    background: var(--very-light-gray);
+    position: absolute;
+    padding: 4% 8% 4% 8%;
+    width: 45cqw;
+    height: 20cqh;
+}
+
+section[class="avatar"] {
+    position: relative;
+    max-width: 50px;
+    max-height: 50px;
+    transform: translateY(-242%);
+}
+
+section[class="avatar"] img {
+    width: 100%;
+    object-fit: scale-down;
+}
+
+section[class="author-name"] {
+    color: var(--very-dark-blue);
+    font-weight: 900;
+}
+
+p[class="comment"] {
+    width: 96%;
+    text-align: center;
+}
+
+section[class="four"] {
+    text-align: center;
+}
+
+section[class="get-started"] {
+    width: 100cqw;
+    display: grid;
+    place-items: center;
+    margin-top: 5cqh;
+}
+
+section[class="get-started"] button {
+    box-shadow: 1px 5px 20px var(--very-pale-red);
+}
+
+section[class="slider"] label {
+    display: contents;
+    cursor: pointer;
+}
+
+input[id="default"] {
+    display: none;
+}
+
+@container(inline-size > 800px) {
+    section[class="slider"] article {
+        animation: autoRun 20s linear infinite;
+        animation-delay:
+            calc((20s/4)*(var(--position)));
+        z-index: calc(var(--position)*-1);
+    }
+
+    @keyframes autoRun {
+        from {
+            left: -100cqw;
+        }
+
+        to {
+            left: 150cqw;
+        }
+    }
+
+    section[class="slider"] input[type="radio"],
+    nav[class="slider-menu"] {
+        display: none;
+    }
+
+    section[class="four"]:has(label:hover) section[class="slider"] article {
+        animation-play-state: paused;
+
+    }
+
+    section[class="four"]:has(input[id="slider-1"]:checked:hover) label[for="slider-1"] article,
+    section[class="four"]:has(input[id="slider-2"]:checked:hover) label[for="slider-2"] article,
+    section[class="four"]:has(input[id="slider-3"]:checked:hover) label[for="slider-3"] article,
+    section[class="four"]:has(input[id="slider-4"]:checked:hover) label[for="slider-4"] article {
+        transform: scale(200%, 200%);
+        z-index: 2;
+        border: 1px var(--very-pale-red) solid;
+    }
+
+    section[class="slider"] article {
+        left: -150cqw;
+    }
+}
+
+@container(inline-size <=800px) {
+
+    article[class="feature"] section[class="right"] h6::before {
+        left: -40px;
+        height: 25px;
+        margin-top: unset;
+    }
+
+    section[class="slider"] {
+        grid-template-columns: 1fr;
+        transform: unset;
+        height: 31cqh;
+        place-items: center;
+    }
+
+    nav[class="slider-menu"] input[type="radio"] {
+        appearance: none;
+        border: 1px var(--bright-red) solid;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+    }
+
+    section[class="four"]:has(input[id="default"]:checked) input[id="slider-1"],
+    nav[class="slider-menu"] input[type="radio"]:checked {
+        background: var(--bright-red);
+    }
+
+    section[class="slider"] article {
+        display: grid;
+        place-items: center;
+        background: var(--very-light-gray);
+        position: absolute;
+        padding: 4% 8% 4% 8%;
+        width: 100cqw;
+        height: 20cqh;
+    }
+
+    nav[class="slider-menu"] {
+        display: unset;
+        user-select: none;
+    }
+
+    section[class="avatar"] {
+        transform: translateY(-190%);
+    }
+
+    section[class="four"]:has(input[id="default"]:checked) label[for="slider-1"] article,
+    section[class="four"]:has(input[id="slider-1"]:checked) label[for="slider-1"] article,
+    section[class="four"]:has(input[id="slider-2"]:checked) label[for="slider-2"] article,
+    section[class="four"]:has(input[id="slider-3"]:checked) label[for="slider-3"] article,
+    section[class="four"]:has(input[id="slider-4"]:checked) label[for="slider-4"] article {
+        opacity: 1;
+    }
+
+    section[class="slider"] label article {
+        opacity: 0;
+        transition: all ease-in-out 1s;
+    }
+}

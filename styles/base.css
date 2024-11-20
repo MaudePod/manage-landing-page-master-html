@@ -1,0 +1,142 @@
+    :root {
+        /*Primary*/
+        --bright-red: hsl(12, 88%, 59%);
+        --dark-blue: hsl(228, 39%, 23%);
+        /*Neutral*/
+        --dark-grayish-blue: hsl(227, 12%, 61%);
+        --very-dark-blue: hsl(233, 12%, 13%);
+        --very-pale-red: hsl(13, 100%, 96%);
+        --very-light-gray: hsl(0, 0%, 98%);
+        --paragraph-width: 95cqw;
+    }
+
+    @font-face {
+        font-family: 'Be Vietnam Pro';
+        src: url(../fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf);
+    }
+
+    body {
+        min-height: 100svh;
+        width: 100svw;
+        max-width: 1440px;
+        display: grid;
+        place-items: center;
+        margin: auto;
+        container: body / inline-size;
+        font-family: 'Be Vietnam Pro';
+    }
+
+    main {
+        display: grid;
+        place-items: center;
+        grid-template-rows: 15cqh 60cqh 50cqh 75cqh 20cqh 25cqh;
+        width: 80%;
+        container: main / inline-size;
+
+    }
+
+    section[class="one"] {
+        width: 100cqw;
+        top: 0;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    section[class="two"] {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100cqw;
+        position: relative;
+        height: 40svh;
+    }
+
+    section[class="three"] {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100cqw;
+        height: 100%;
+        position: relative;
+        counter-reset: feature-count;
+    }
+
+    section[class="five"] {
+        display: grid;
+        background: var(--bright-red);
+        grid-template-columns: 70fr 30fr;
+        place-items: center;
+        width: 100cqw;
+        height: 100%;
+        color: white;
+        padding: 0% 200%;
+        background-image: url(./images/bg-simplify-section-desktop.svg);
+        background-position: bottom;
+    }
+
+    footer[class="six"] {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: var(--very-dark-blue);
+        color: white;
+        width: 100cqw;
+        height: 100%;
+        padding: 0% 200%;
+    }
+
+    div[class="attribution"] {
+        background: var(--very-dark-blue);
+        width: 100cqw;
+        padding: 0% 200%;
+        padding-top: 50px;
+    }
+
+    button {
+        background-color: var(--bright-red);
+        color: var(--very-light-gray);
+        border-color: transparent;
+        border-radius: 30px;
+        width: 150px;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        filter: contrast(0.7);
+    }
+
+    article h1 {
+        font-size: xx-large;
+        color: var(--very-dark-blue);
+    }
+
+    svg[id="svgs"] {
+        display: none;
+    }
+
+    @container body (inline-size < 1000px) {
+        main {
+            display: grid;
+            place-items: center;
+            grid-template-rows: unset;
+            grid-template-rows: 15cqh auto auto 75cqh 30cqh 60cqh;
+            width: 80%;
+        }
+    }
+
+    @container main (inline-size <=1000px) {
+
+        section[class="one"],
+        section[class="two"],
+        section[class="three"],
+        section[class="five"],
+        section[class="four"] {
+            grid-template-columns: 1fr;
+            place-items: center;
+        }
+
+        body {
+            width: 100dvw;
+        }
+
+    }
