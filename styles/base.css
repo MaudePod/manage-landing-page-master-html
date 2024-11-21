@@ -32,7 +32,6 @@
         grid-template-rows: 15cqh 60cqh 50cqh 75cqh 20cqh 25cqh;
         width: 80%;
         container: main / inline-size;
-
     }
 
     section[class="one"] {
@@ -85,6 +84,7 @@
 
     div[class="attribution"] {
         background: var(--very-dark-blue);
+        color: white;
         width: 100cqw;
         padding: 0% 200%;
         padding-top: 50px;

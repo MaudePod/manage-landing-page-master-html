@@ -27,6 +27,7 @@ article[class="feature"] section[class="right"] h6::before {
     margin-top: -10px;
     height: 25px;
     width: 40px;
+    z-index: 2;
 }
 
 article[class="feature"] section[class="right"] p {
@@ -43,7 +44,6 @@ section[class="bottom-container"] {
 
 article[class="feature"] section[class="right"] {
     display: contents;
-
 }
 
 @container(inline-size <=425px) {
@@ -110,6 +110,5 @@ article[class="feature"] section[class="right"] {
 
     article[class="feature"] section[class="right"] {
         display: contents;
-
     }
 }
