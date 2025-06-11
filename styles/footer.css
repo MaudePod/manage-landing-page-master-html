@@ -54,7 +54,6 @@ input[id="update-me"]:focus-visible {
     outline: 0px;
 }
 
-
 label[for="update-me"] {
     display: grid;
     width: 100%;
@@ -82,6 +81,10 @@ section[class="social"] svg:hover {
     fill: var(--bright-red);
 }
 
+footer[class="six"] li a{
+    text-decoration: none;
+    color: white;
+}
 
 @container(inline-size > 800px) {
     section[class="logo-social"] span[class="copyright"] {

@@ -28,6 +28,10 @@ nav[id="manage-nav"] button {
     cursor: pointer;
 }
 
+nav[id="manage-nav"] li a{
+    text-decoration: none;
+    color: var(--very-dark-blue);
+}
 input[id="open-mobile-menu"],
 label[for="open-mobile-menu"] {
     display: none;
