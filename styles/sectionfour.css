@@ -121,7 +121,7 @@ input[id="default"] {
     section[class="slider"] {
         grid-template-columns: 1fr;
         transform: unset;
-        height: 31cqh;
+        height: 36cqh;
         place-items: center;
     }
 

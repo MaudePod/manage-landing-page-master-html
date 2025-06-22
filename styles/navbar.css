@@ -48,6 +48,7 @@ label[for="menu-close"] {
     nav[id="manage-nav"] {
         grid-template-areas: "logo ... hamburger";
         justify-content: space-between;
+        width:100%;
     }
 
     nav[id="manage-nav"] button,
